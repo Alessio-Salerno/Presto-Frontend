@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Presto</title>
+    
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+        *{
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto; 
+        }
+        
+        :root{
+            --yellow: rgb(255, 232, 31);
+            --black:rgb(23, 23, 23);
+            --white:rgb(244, 244, 244);
+        }
+        
+        
+        body{
+            background-color: black;
+            color: var(--yellow);
+        }
+        
+        
+        .bg-yellow{
+            background-color: var(--yellow);
+        }
+        
+        .bg-black{
+            background-color: var(--black);
+        }
+        
+        .bg-white{
+            background-color: var(--white);
+        }
+        
+        
+        .text-yellow{
+            color: var(--yellow);
+        }
+        
+        
+        .text-black{
+            color: var(--black);
+        }
+        
+        
+        .text-white{
+            color: var(--white);
+        }
+        
+        
+        /* NAVBAR */
+        
+        
+        .navbar{
+            height: 70px;
+            transition: 0.5s;
+        }
+        
+        
+        
+        .nav-link{
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        
+        .nav-link:hover{
+            color: yellowgreen!important;
+        }
+        
+        .logo{
+            width:50px;
+        }
+        
+        
+        
+        #lightsaber{
+            transition: 0.5s;
+        }
+        
+        
+        /* PAGINA ANNUNCI */
+        
+        /* ACCORDION */
+        
+        
+        .accordion-item{
+            background-color: var(--black);
+            color: yellow;
+        }
+        
+        .accordion-button{
+            background-color: var(--black);
+            color: yellow;
+        }
+        
+        
+        .accordion-button:not(.collapsed){
+            color: goldenrod;
+            background-color: var(--black);
+            box-shadow: none;
+        }
+        
+        
+        
+        .accordion-button:focus{
+            box-shadow: none;
+        }
+        
+        
+       /* CARD */
+
+       .card-custom{
+        width: 30%;
+        border: 2px solid var(--yellow);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+       }
+
+
+       .img-card{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+       }
+
+        
+        
+        @media screen and (max-width:600px){
+            .positioned{
+                position: static;
+            }
+            
+            button.navbar-toggler{
+                background-color: white;
+                border: solid black;
+            }
+            
+            
+        }
+        
+        
+        
+        
+        
+    </style>
+    
+    
+    
+    
+</head>
+<body>
+    
+    
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-md bg-black fixed-top">
+        <div id="collapse" class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img   id="logoNavbar"   src="./media/Logo bianco.png" class="logo"   alt="Logo sito">
+            </a>
+            <button id="lightsaber" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="PRESTO.HTML"  target="_blank">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ANNUNCI.html" target="_blank">Annunci</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="CHI SIAMO.html">Chi siamo</a>
+                    </li>
+                </ul>
+                <div class="logo"></div>
+            </div>
+        </div>
+    </nav>
+    <!-- NAVBAR END -->
+    
+    
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center text-yellow">Pagina di annunci</h1>
+    </div>
+    
+    
+    <!-- ACCORDION -->
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-12 col-md-3">
+                
+                <h3>Filtra per : </h3>            
+
+                <div class="accordion sticky-top " id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Categoria
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div id="radioWrapper" class="accordion-body">
+                                
+                                
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="categoria" id="All" checked>
+                                    <label class="form-check-label" for="All">
+                                        Tutte le categorie
+                                    </label>
+                                </div>
+                               
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Prezzo
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <input id="priceInput" type="range" class="w-100"  value="50" min="0" max="100">
+                                <p id="priceValue"  class="lead">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Parola
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <input id="wordInput"  type="text" class="w-100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- CARD -->
+            <div  id="cardWrapper"  class="col-12 col-md-9 d-flex justify-content-around flex-wrap ">
+            </div>
+            <!-- CARD -->
+            
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+        
+        // FOGLIO JSON
+        /*
+        è un acronimo ->  Javascript Object notification.
+        
+        È un particolare tipo di formato che serve per contenere dati complessi.
+        All'interno del json troviamo dati primitivi
+        
+        Esempio di dati in Json -> Array -> tipo di dato strutturale pesante
+        
+        Quindi bisogna andarsi a prendere il foglio json e convertirlo in un oggetto Javascript,
+        perchè JS legge il json come stringhe fino a quando non è convertito.
+        
+        Questo lavoro si fa tramite una chiamata asincrona -> fetch();
+        
+        fetch() -> Chiamata asincrona che ci pemrette a collegarci al json
+        dal json si estrae il contenuto e lo restituisce tramite promise
+        
+        Attraverso una concatenazione di altri metodi il file json si converte 
+        in oggetto javascript
+        
+        .then(); -> questo metodo permette di convertire la promise nel dato strutturale
+        e di poterlo utilizzare come tale su JAVASCRIPT
+        
+        // PASSAGGI
+        
+        1 - fetch() -> mi collego al json e ne ottengo una promise
+        2 - alla fetch si concatena il metodo .then() -> converto la promise in un dato strutturale (oggetto)
+        3 - .then() -> utilizzare il dato ottenuto
+        
+        
+        // API -> Sono delle chiavi che ci permettono di raggiungere un json online
+        
+        a volte possono essere con libero accesso, quindi libere. Oppure hanno API KEY da aggiungere al 
+        collegamento per avere l'accesso 
+        
+        
+        METODO .json() -> metodo delle promise che mi permette di convertirla in oggetto JS
+        
+            // METODO Set()
+         // Set() -> Classe 
+           /*
+           Classe che restituisce, partendo da un array, un nuovo oggetto
+        di tipo Set il quale contiene solo valori Univoci
+        
+        */
+        
+        
+        
+        
+        
+        fetch('./esempio.json').then( (response) => response.json() ).then( (data) => {
+            
+            data.sort( (a, b) => a.prezzo - b.prezzo );
+
+            let radioWrapper = document.querySelector('#radioWrapper');
+            let cardWrapper = document.querySelector('#cardWrapper');
+           
+           function radioCreate(){
+            let categoria = data.map( (annuncio) => annuncio.categoria)
+            console.log(categoria);
+
+
+            // let unicaCategoria = [];
+
+            //  != not
+            // !true = non vero
+            // !false = vero
+
+            // Partendo da categoria fai un forEach, dove per ogi singola category fai un controllo
+            // categoria.forEach( (category) => {
+            //     if( !unicaCategoria.includes(category)  ){
+            //         unicaCategoria.push(category);
+            //     }
+            // });
+
+
+        // Array.from() -> permette di convertire un array like in un array
+
+
+            let unicaCategoria = Array.from(new Set (categoria));
+
+          unicaCategoria.forEach( (category) =>  {
+
+          let div = document.createElement('div');
+          div.classList.add('form-check');
+          div.innerHTML = `
+          <input class="form-check-input" type="radio" name="categoria" id="${category}">
+          <label class="form-check-label" for="${category}">
+          ${category}
+            </label>
+
+          `;
+
+          radioWrapper.appendChild(div);
+
+          });
+        
+            console.log(unicaCategoria);
+
+           }
+
+
+        
+
+           radioCreate();
+
+
+
+        //  function truncateWord(string){
+        // Prende i caratteri delle stringhe
+        //  if(string.length > 15){
+        //     return string.split(' ');
+        //  }
+        //  else{
+        //     return string;
+        //  }
+
+        //  }
+
+
+            
+           function showCards(array){
+            cardWrapper.innerHTML = '';
+            array.forEach( (annuncio, i) => {
+            let div = document.createElement('div');
+            div.classList.add('card-custom');
+            div.innerHTML = `
+                <img src="https://picsum.photos/${300 + i}" alt="img-cas" class="img-fluid  img-card">
+                <p class="h2" title="${annuncio.nome}" style="text-align:center;">${annuncio.nome}</p>
+                <p class="h4">${annuncio.categoria}</p>
+                <p class="lead">${annuncio.prezzo}€</p>
+            `;
+            cardWrapper.appendChild(div);
+            });
+
+           }
+
+           showCards(data);
+        
+
+
+           let radioButtons = document.querySelectorAll('.form-check-input');
+
+           function filterCategory(array){
+            // In questa funzione bisogna ottenere un nuovo array partendo dal json e gli elementi del nuovo array dovranno soddisfare la condizione
+            // per la quale la loro cateogry  sia uguale alla categoria che stiamo passando
+           
+           let arrayFromNodeList = Array.from(radioButtons);
+           let button = arrayFromNodeList.find( (bottone) => bottone.checked );
+           let category = button.id; 
+
+        //let category = Array.from(radioButtons).find( (bottone) => bottone.checked ).id;
+
+           /*
+   
+           */
+           
+            
+            if(category != 'All'){
+
+                let filtered = array.filter( (annuncio)  => annuncio.categoria == category );
+                console.log(filtered);
+                return filtered;
+            }
+            else{
+                // TUTTE LE CATEGORIE
+                return array;
+            }
+          
+
+           }
+            // filterCategory('Arredamento');
+          
+           // Catturare i radio buttons 
+
+            
+           radioButtons.forEach( (button) =>{
+             button.addEventListener('click', () =>{
+                 
+                globalFilter();
+
+             });
+
+           });
+
+           let priceInput = document.querySelector('#priceInput');
+           let priceValue = document.querySelector('#priceValue');
+
+           function setPrezzo(){
+            // Il + davanti converte le stringhe in numeri
+            let prices = data.map((annuncio) => + annuncio.prezzo);
+            prices.sort( (a , b) => a - b );
+            let maxPrezzo = Math.ceil(prices.pop());
+            priceInput.max = maxPrezzo;
+            priceInput.value = maxPrezzo;
+            priceValue.innerHTML = maxPrezzo;
+         }
+
+         setPrezzo();
+
+
+         function filterPrice(array){
+         let filtered = array.filter( (annuncio) => annuncio.prezzo <= priceInput.value);
+         return filtered;
+         }
+        //  EVENTO INPUT
+          priceInput.addEventListener('input', () => {
+            priceValue.innerHTML = priceInput.value;
+            globalFilter();
+          })
+
+
+
+          let wordInput = document.querySelector('#wordInput');
+
+          function filterWord(array){
+            let filtered = array.filter( (annuncio) => annuncio.nome.toLowerCase().includes(wordInput.value.toLowerCase()));
+            return filtered;
+          }
+               wordInput.addEventListener('input', () =>{
+              globalFilter();
+               });
+
+
+        //    ---------------------------------- \\
+
+        function globalFilter(){
+            let filteredByCategory = filterCategory(data); // array filtrato per categoria
+            let filteredByPrice = filterPrice(filteredByCategory); // array filtrato per categoria e prezzo
+            let filteredByWord = filterWord(filteredByPrice); // array filtrato per categoria prezzo e parola
+            showCards(filteredByWord);
+        }
+          
+
+
+
+        });
+
+        
+
+     
+
+        
+
+        
+      
+
+        
+        
+        
+        
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    <!-- KIT ICONE  -->
+    <script src="https://kit.fontawesome.com/f0488c32c1.js" crossorigin="anonymous"></script>
+    
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
